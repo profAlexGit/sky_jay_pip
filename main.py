@@ -24,7 +24,7 @@ def diary_date():
     return render_template('diary_date.html')
 
 
-@app.route('diary/date/createnote')
+@app.route('/diary/date/createnote')
 def create_note():
     return render_template('createnote.html')
 

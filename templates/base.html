@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sky Jay {% block title %}{% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <header>
+    <!-- Button trigger Modal User Type -->
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-user-type">
+      Зарегистрироваться
+    </button>
+
+    <!-- Button trigger Modal Login -->
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-login">
+      Войти
+    </button>
+  </header>
+
+  {% block content %}{% endblock %}
+
+
+  <!-- Modal User Type -->
+  <div class="modal fade" id="modal-user-type" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex flex-wrap gap-4 justify-content-center">
+              <div class="wrap-btn-radio">
+                <input type="radio" name="user-type" id="user-type-default" checked>
+                <label class="btn btn-user" for="user-type-default">
+                  Ищу психологическую помощь
+                </label>
+              </div>
+              <div class="wrap-btn-radio">
+                <input type="radio" name="user-type" id="user-type-psycholog">
+                <label class="btn btn-user btn-user--psycholog" for="user-type-psycholog">
+                  Предоставляю психологическую помощь
+                </label>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Продолжить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="modal-login" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title">Вход</h5>
+        </div>
+        <div class="modal-body">
+          <form class="mb-0">
+              <input class="form-control mb-3" type="email" placeholder="Введите адрес электронной почты">
+              <input class="form-control" type="password" placeholder="Введите ваш пароль">
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-primary">Войти</button>
+          <a href="#" class="link">Забыли пароль?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
