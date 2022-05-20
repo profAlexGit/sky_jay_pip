@@ -1,87 +1,156 @@
 :root {
-	--color-primary: #5CC19E;
-	--color-alt: #73A9D5;
-	--color-alt_dark: #5396cc;
+	--color-green: hsla(159, 45%, 56%, 1);
+	--color-green_dark: hsla(159, 45%, 46%, 1);
+	--color-blue: hsla(207, 54%, 64%, 1);
+	--color-blue_dark: hsla(207, 54%, 54%, 1);
 }
 
 body {
 	font-family: 'Inter', sans-serif;
+	font-size: 12px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+a {
+    color: var(--color-green);
 }
 
-.wrap-btn-radio input[type="radio"] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* utilities */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+
+    .border-bottom {
+        border-color: #E7E7E7;
+    }
+
+.nav-link {
+    padding: 0;
+    font-weight: 500;
+    font-size: 11px;
+    color: var(--color-green);
+}
+.nav-link:focus, .nav-link:hover {
+    color: var(--color-green_dark);
 }
 
-.btn-user {
-	padding: 110px 10px 20px;
-	width: 250px;
+/*.form*/
+    .form-search {
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+    }
+    .form-control:focus {
+        box-shadow: none;
+        border-color: var(--color-green);
+    }
+    .form-control-search {
+        padding: 10px 90px 10px 10px;
+		font-size: 12px;
+		line-height: 1.25;
+    }
+    .form-search .btn-search {
+        position: absolute;
+        right: 0;
 
-	color: #fff;
-	line-height: 1.2;
+        width: 60px;
+        min-width: auto;
+        height: 100%;
+        padding: 9px 20px;
+        border-radius: 0px 4px;
+    }
+    .form-search .btn-keyboard {
+        position: absolute;
+        right: 60px;
 
-	border-radius: 10px;
-	background: #B9B9B9 url(../img/icon-crying.svg) no-repeat top 15px center;
-}
+        min-width: auto;
+        height: 100%;
+        padding: 8px;
+    }
 
-.btn-user:hover {
-	color: #fff;
-  background-color: var(--color-alt);
-}
+    .form-search .btn svg {
+        vertical-align: top;
+    }
 
-.wrap-btn-radio input[type="radio"]:checked + .btn-user {
-  background-color: var(--color-primary);
-}
 
-.btn-user--psycholog {
-	background-image: url(../img/icon-psycholog.svg);
-	background-position: top center;
-}
+	.form-control::placeholder {
+		font-size: 12px;
+	}
 
 /*.btn*/
+    .btn {
+        min-width: 140px;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
 
-	.btn-primary {
-		padding: 10px 33px;
-
-	  background-color: var(--color-primary);
-	  border-color: var(--color-primary);
+	.btn-green {
+	  color: #fff;
+	  background-color: var(--color-green);
+	}
+	.btn-green:hover {
+	  color: #fff;
+	  background-color: var(--color-green_dark);
 	}
 
-	.btn-primary:hover {
-	  background-color: var(--color-alt);
-	  border-color: var(--color-alt);
-	}
+    .btn-blue {
+      color: #fff;
+	  background-color: var(--color-blue);
+    }
+    .btn-blue:hover {
+      color: #fff;
+	  background-color: var(--color-blue_dark);
+    }
 
-	.btn-primary:active,
-	.btn-primary:focus {
-	  background-color: var(--color-alt_dark);
-	  border-color: var(--color-alt_dark);
-	}
+/* .btn-user */
+    .btn-user {
+        padding: 110px 10px 20px;
+        width: 250px;
+
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.2;
+
+        border-radius: 10px;
+        background: #B9B9B9 url(../img/picture-crying.svg) no-repeat top 15px center;
+    }
+
+    .btn-user:hover {
+        color: #fff;
+      background-color: var(--color-blue_dark);
+    }
+
+    .wrap-btn-radio input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+    .wrap-btn-radio input[type="radio"]:checked + .btn-user {
+      background-color: var(--color-blue);
+    }
+
+    .btn-user--psycholog {
+        background-image: url(../img/picture-psycholog.svg);
+        background-position: top center;
+    }
 
 
 /*.modal*/
-
 	.modal-content {
 		padding: 2rem;
 		border: none;
@@ -90,8 +159,9 @@ body {
 
 	.modal-header {
 		justify-content: center;
+		padding: 0 1rem;
 
-		color: var(--color-primary);
+		color: var(--color-green);
 		border: none;
 	}
 
@@ -100,6 +170,8 @@ body {
 
 	.modal-footer {
 		justify-content: center;
+		padding: 0 1rem;
+
 		border: none;
 	}
 
@@ -111,10 +183,4 @@ body {
 		#modal-login .modal-dialog {
 			max-width: 380px;
 		}
-	}
-
-/*.form*/
-
-	.form-control::placeholder {
-		font-size: 12px;
 	}
