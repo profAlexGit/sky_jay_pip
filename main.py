@@ -11,7 +11,15 @@ app.config['SECRET_KEY'] = 'sky_jay_secret_key'
 
 @app.route('/')
 def index():
-    return render_template('main_page.html')
+    return render_template('index.html')
+
+@app.route('/registration')
+def registration():
+    return render_template('registration.html')
+
+@app.route('/registration-confirmation')
+def registration_confirmation():
+    return render_template('registration_confirmation.html')
 
 
 @app.route('/diary')
