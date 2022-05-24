@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 from werkzeug.utils import redirect
 
-from data import db_session, models
+from data import db_session, user
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sky_jay_secret_key'
@@ -19,7 +19,7 @@ def registrationStage_2_Psycho():
     if request.method == 'GET':
         return 'Здесь будет страница регистрации психолога'
     elif request.method == 'POST':
-        user = models.createUserModel(_isUser=False)
+        user = user.createUserModel(_isUser=False)
         if not (user is None):
             session = db_session.create_session()
             session.add(user)
@@ -38,7 +38,7 @@ def registrationStage_2_User():
     if request.method == 'GET':
         return render_template('registration.html')
     elif request.method == 'POST':
-        user = models.createUserModel(_isUser=True)
+        user = user.createUserModel(_isUser=True)
         session = db_session.create_session()
         session.add(user)
         session.commit()
