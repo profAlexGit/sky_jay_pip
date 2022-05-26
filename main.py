@@ -19,10 +19,10 @@ def registrationStage_2_Psycho():
     if request.method == 'GET':
         return 'Здесь будет страница регистрации психолога'
     elif request.method == 'POST':
-        user = user.createUserModel(_isUser=False)
+        user1 = user.createUserModel(_isUser=False)
         if not (user is None):
             session = db_session.create_session()
-            session.add(user)
+            session.add(user1)
             session.commit()
             session.close()
             return redirect('/all-users')
@@ -38,15 +38,15 @@ def registrationStage_2_User():
     if request.method == 'GET':
         return render_template('registration.html')
     elif request.method == 'POST':
-        user = user.createUserModel(_isUser=True)
+        user1 = user.createUserModel(_isUser=True)
         session = db_session.create_session()
-        session.add(user)
+        session.add(user1)
         session.commit()
         session.close()
         return redirect('/all-users')
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     return render_template('index.html')
 
