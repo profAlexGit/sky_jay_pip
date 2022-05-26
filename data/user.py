@@ -22,8 +22,6 @@ def createUserModel(_isUser: bool = True) -> User:
     для внесения данных в БД
 
     _isUser - Параметр отвечающий за определение пользователя. Если False то психолог, иначе пользователь
-    password - кэшированный пароль (надёжная защита)
-    salt - Какая-то соль) (как написано в интернете так и сделал)
     """
 
     from werkzeug.security import generate_password_hash
@@ -35,6 +33,7 @@ def createUserModel(_isUser: bool = True) -> User:
     placeResidence = request.form['placeResidence']
     dateBirth = request.form['dateBirth']
     email = request.form['email']
+
     user = User(
         isUser=_isUser, name=name, surname=surname, placeResidence=placeResidence, dateBirth=dateBirth,
         password=password, email=email)
