@@ -1,5 +1,4 @@
 import sqlalchemy as sa
-from flask import request
 
 from .db_session import SqlAlchemyBase
 
@@ -23,28 +22,23 @@ def createUserModel(_isUser: bool = True) -> User:
     для внесения данных в БД
 
     _isUser - Параметр отвечающий за определение пользователя. Если False то психолог, иначе пользователь
-    password - кэшированный пароль (надёжная защита)
-    salt - Какая-то соль) (как написано в интернете так и сделал)
     """
 
-    import os
-    import hashlib
+    from werkzeug.security import generate_password_hash
+    from flask import request
 
-    salt = os.urandom(32)
-    password = hashlib.pbkdf2_hmac(hash_name='sha256', password=request.form['password'].encode('utf-8'), salt=salt,
-                                   iterations=100000, dklen=64)
+    password = generate_password_hash(request.form['password'])
     name = request.form['name']
     surname = request.form['surname']
     placeResidence = request.form['placeResidence']
     dateBirth = request.form['dateBirth']
     email = request.form['email']
+
     user = User(
         isUser=_isUser, name=name, surname=surname, placeResidence=placeResidence, dateBirth=dateBirth,
         password=password, email=email)
-    return user
 
     session.commit()
     session.close()
 
-    end = perf_counter() - start
-    print(f"Time: {end=}")
+    return user
