@@ -178,18 +178,18 @@ a {
 
     @media (max-width: 576px) {
         .btn {
-            width: 100%;
+            /*width: 100%;*/
         }
     }
 
-	.btn-green {
-	  color: #fff;
-	  background-color: var(--color-green);
-	}
-	.btn-green:hover {
-	  color: #fff;
-	  background-color: var(--color-green_dark);
-	}
+    .btn-green {
+      color: #fff;
+      background-color: var(--color-green);
+    }
+    .btn-green:hover {
+      color: #fff;
+      background-color: var(--color-green_dark);
+    }
 
     .btn-blue {
       color: #fff;
@@ -201,13 +201,17 @@ a {
     }
 
     .btn-link {
-        min-width: auto;
-        padding: 0;
-        color: var(--color-green);
+      min-width: auto;
+      padding: 0;
+      color: var(--color-green);
     }
 
     .btn-link:hover {
-        color: var(--color-green_dark);
+      color: var(--color-green_dark);
+    }
+
+    .btn-round {
+      border-radius: 20px;
     }
 
 /* .btn-user */
@@ -286,9 +290,9 @@ a {
 
 	.modal-header {
 		justify-content: center;
-		padding: 0 1rem;
+		/*padding: 0 1rem;*/
 
-		color: var(--color-green);
+		/*color: var(--color-green);*/
 		border: none;
 	}
 
@@ -303,6 +307,10 @@ a {
 	}
 
 	@media (min-width: 576px) {
+	  #modal-first-video .modal-dialog {
+	    max-width: 900px;
+	  }
+
 		#modal-user-type .modal-dialog {
 	    max-width: 630px;
 		}
@@ -310,4 +318,18 @@ a {
 		#modal-login .modal-dialog {
 			max-width: 380px;
 		}
+	}
+
+	@media (max-width: 576px) {
+    .modal-dialog {
+      margin: 0;
+    }
+    .modal-content {
+      min-height: 100vh;
+      justify-content: center;
+		  padding: 1rem;
+    }
+    .modal-body {
+      flex-grow: 0;
+    }
 	}
