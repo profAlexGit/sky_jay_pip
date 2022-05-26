@@ -14,6 +14,12 @@
   })
 })()
 
+// modal UserType
+if(window.location.pathname === '/'){
+  var modalUserType = new bootstrap.Modal(document.getElementById('modal-user-type'));
+  modalUserType.show();
+}
+
 // Virtual Keyboard
 const Keyboard = window.SimpleKeyboard.default;
 const KeyboardLayouts = window.SimpleKeyboardLayouts.default;

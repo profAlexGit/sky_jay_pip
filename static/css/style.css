@@ -306,6 +306,13 @@ a {
 		border: none;
 	}
 
+	.btn-close {
+	  position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0.2;
+	}
+
 	@media (min-width: 576px) {
 	  #modal-first-video .modal-dialog {
 	    max-width: 900px;
@@ -328,6 +335,8 @@ a {
       min-height: 100vh;
       justify-content: center;
 		  padding: 1rem;
+
+		  border-radius: 0px;
     }
     .modal-body {
       flex-grow: 0;
