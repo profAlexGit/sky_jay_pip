@@ -1,6 +1,6 @@
 import sqlalchemy as sa
 
-from db_session import SqlAlchemyBase
+from .db_session import SqlAlchemyBase
 
 
 class Note(SqlAlchemyBase):
