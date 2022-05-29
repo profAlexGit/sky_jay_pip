@@ -15,7 +15,7 @@ class Note(SqlAlchemyBase):
 
 def createNoteModel(user_id: int, date, text: str = 'Нет текста', image: str = 'Нет') -> Note:
     """
-    Функция создающая и возвращающая модель Note
+    Функция создающая и возвращающая экземпляр класса Note
 
     user_id - Идентификатор пользователя
     date - Дата
