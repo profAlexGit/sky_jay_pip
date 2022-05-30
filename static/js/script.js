@@ -83,9 +83,20 @@ function handleShift() {
     }
   });
 
-
 //  tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
+
+// videoPlayer
+  var videoPlayer = document.getElementById('video-player');
+  var video = videoPlayer.querySelector('video');
+  var videoPlay = videoPlayer.querySelector('.video-player__play');
+
+  videoPlay.addEventListener("click", function() {
+    if (video.paused || video.ended) video.play();
+    else video.pause();
+
+    videoPlay.setAttribute('data-state','hidden');
+  });

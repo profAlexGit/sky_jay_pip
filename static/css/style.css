@@ -425,16 +425,61 @@ a:hover {
     text-decoration: none;
   }
 
-  .tooltip {
-  }
-  .tooltip-inner {
-    padding: 1rem 0.5rem;
-    border-radius: 0;
-  }
-  .tooltip a {
-    color: #fff;
-    text-decoration: none;
-  }
-  .tooltip a:hover {
-    text-decoration: underline;
-  }
+  /*.video-player */
+    .video-player {
+      position: relative;
+    }
+    .video-player__controls {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      z-index: 1;
+    }
+    .video-player__controls[data-state=hidden],
+    .video-player__play[data-state=hidden] {
+       opacity: 0;
+    }
+    .video-player__controls[data-state=visible],
+    .video-player__play[data-state=visible],
+    .video-player__play:hover,
+    .video:hover + .video-player__play {
+       opacity: 1;
+    }
+
+    .video-player__play {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      width: 154px;
+      height: 154px;
+      margin: auto;
+
+      background: rgba(185, 185, 185, 0);
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+    .video-player__play:focus {
+      box-shadow: none;
+      background: rgba(185, 185, 185, 0.2);
+    }
+
+  /*.tooltip*/
+    .tooltip {
+    }
+    .tooltip-inner {
+      padding: 1rem 0.5rem;
+      border-radius: 0;
+    }
+    .tooltip a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .tooltip a:hover {
+      text-decoration: underline;
+    }
