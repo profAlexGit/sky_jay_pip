@@ -2,46 +2,47 @@
 
 {% block content %}
 <section>
-    <div class="container mw-580">
-        <form class="row justify-content-center needs-validation" novalidate method="post">
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="user-avatar">
-                            <img src="{{ url_for('static', filename='img/icons/icon-blank-photo.svg') }}" alt="">
-                        </div>
-                        <button class="btn btn-link mt-2">
-                            Добавить фото
-                        </button>
-                        <input type="file" accept=".jpg,.png" name="avatar" class="form-control">
-                    </div>
-                </div>
+  <div class="container mw-580">
+    <form class="row justify-content-center needs-validation form-reg" novalidate method="post">
+      <div class="col-md-4 order-last order-md-first">
+        <div class="card border-sm-0">
+          <div class="card-body text-center">
+            <div class="user-avatar">
+              <img src="{{ url_for('static', filename='img/icons/icon-blank-photo.svg') }}" alt="">
             </div>
-            <div class="col-md-8 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-3">Регистрация</h5>
-                        <div class="d-flex flex-wrap gap-3 mb-3 text-center">
-                            <div class="d-flex gap-3">
-                                <input class="form-control" type="text" name="name" placeholder="Введите имя" required>
-                                <input class="form-control" type="text" name="surname" placeholder="Введите фамилию" required>
-                            </div>
-                            <input class="form-control" type="text" name="placeResidence" placeholder="Место проживания (Не обязательно)">
-                            <div class="d-flex gap-3">
-                                <input class="form-control" type="date" name="dateBirth" placeholder="Дата рождения" required>
-                                <input class="form-control" type="password" name="password" placeholder="Придумайте пароль" required>
-                            </div>
-                            <input class="form-control" type="email" name="email" placeholder="Введите электронную почту" required>
-                        </div>
-                        <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
-                            <button type="submit" class="btn btn-blue">Далее</button>
-                            <a href="/" class="btn btn-link">Вернуться на главную</a>
-                        </div>
-                    </div>
-                </div>
+            <button class="btn btn-link mt-2">
+              Добавить фото
+            </button>
+            <input type="file" accept=".jpg,.png" name="avatar" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card border-sm-0">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-3">Регистрация</h5>
+            <div class="d-flex flex-wrap gap-3 mb-3 text-center">
+              <div class="d-flex gap-3">
+                <input class="form-control" type="text" name="name" placeholder="Введите имя" required>
+                <input class="form-control" type="text" name="surname" placeholder="Введите фамилию" required>
+              </div>
+              <input class="form-control" type="email" name="email" placeholder="Введите электронную почту" required>
+              <input class="form-control form-control--mask-date" type="text" name="dateBirth" placeholder="Дата рождения" required>
+              <input class="form-control" type="text" name="placeResidence" placeholder="Место проживания (Не обязательно)">
+              <div class="d-flex gap-3">
+                <input class="form-control" type="password" name="password" placeholder="Придумайте пароль" required>
+                <input class="form-control" type="password" name="password-repeat" placeholder="Повторите пароль" required>
+              </div>
             </div>
-        </form>
-    </div>
+            <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
+                <button type="submit" class="btn btn-blue">Далее</button>
+                <a href="/" class="btn btn-link">Вернуться на главную</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </section>
 
 {% endblock %}

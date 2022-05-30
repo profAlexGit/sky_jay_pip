@@ -14,6 +14,17 @@
   })
 })()
 
+// mask input date
+const inputsDate = document.querySelectorAll('.form-control--mask-date');
+Array.from(inputsDate).forEach(input => {
+  input.addEventListener('focus', function() {
+    input.setAttribute('type', 'date');
+  });
+  input.addEventListener('focusout', function() {
+    if (input.value == '') input.setAttribute('type', 'text');
+  });
+});
+
 // modal UserType
 if(window.location.pathname === '/'){
   var modalUserType = new bootstrap.Modal(document.getElementById('modal-user-type'));
