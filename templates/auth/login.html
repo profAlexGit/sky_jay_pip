@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="container mw-580">
+    <div class="row justify-content-center">
+      <div class="col-md-8 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <form id="form-login" class="text-center needs-validation" novalidate method="post">
+              <h5 class="card-title color-green text-center mb-3">Вход</h5>
+              <input class="form-control mb-3" type="email" placeholder="Введите адрес электронной почты" required>
+              <input class="form-control mb-3" type="password" placeholder="Введите ваш пароль" required>
+              <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
+                <button type="submit" class="btn btn-blue">Войти</button>
+                <a href="#" class="btn btn-link">Забыли пароль?</a>
+              </div>
+              <a href="/registration/user" class="btn btn-link color-blue mt-4">Зарегистрироваться</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
