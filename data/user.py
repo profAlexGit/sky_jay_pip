@@ -27,7 +27,7 @@ def createUserModel(_isUser: bool = True) -> User:
     from werkzeug.security import generate_password_hash
     from flask import request
 
-    password = generate_password_hash(request.form['password'])
+    password = generate_password_hash(request.form['password']).encode('utf-8')
     name = request.form['name']
     surname = request.form['surname']
     placeResidence = request.form['placeResidence']
@@ -37,8 +37,5 @@ def createUserModel(_isUser: bool = True) -> User:
     user = User(
         isUser=_isUser, name=name, surname=surname, placeResidence=placeResidence, dateBirth=dateBirth,
         password=password, email=email)
-
-    session.commit()
-    session.close()
 
     return user

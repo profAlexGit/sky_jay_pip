@@ -68,7 +68,7 @@
       <div class="simple-keyboard"></div>
     </div>
   </section>
-  <div class="pt-5">
+  <div class="pt-4">
     <nav class="navbar fixed-top vh-100 d-flex align-items-center text-center">
       <ul class="navbar-nav gap-3">
           <li class="nav-item">
@@ -176,8 +176,8 @@
           <h5 class="modal-title text-center">Добро пожаловать, мы подготовили для вас ознакомительное видео!</h5>
         </div>
         <div class="modal-body text-center">
-          <video class="lazyload mw-100 mx-auto my-2" controls poster="{{ url_for('static', filename='img/cover-first-video.jpg') }}">
-            <source data-src="{{ url_for('static', filename='/example-video.mp4') }}" type="video/mp4">
+          <video class="lazyload mw-100 mx-auto my-2" controls poster="{{ url_for('static', filename='videos/example-video/example-video-cover.png') }}">
+            <source data-src="{{ url_for('static', filename='videos/example-video/example-video.mp4') }}" type="video/mp4">
           </video>
         </div>
         <div class="modal-footer">
