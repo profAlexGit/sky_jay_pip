@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 'sky_jay_secret_key'
 
 @app.route('/registration')  # Страница которая перенаправляет на регистрацию пользователя или психолога
 def registrationStage_1():
-    return render_template('registration_page1.html')
+    return render_template('auth/registration_page1.html')
 
 
 @app.route('/registration/psychologist', methods=['GET', 'POST'])  # Страница регистрации психолога
@@ -36,7 +36,7 @@ def registrationStage_2_Psycho():
 @app.route('/registration/user', methods=['GET', 'POST'])  # Страница регистрации пользователя
 def registrationStage_2_User():
     if request.method == 'GET':
-        return render_template('registration.html')
+        return render_template('auth/registration.html')
     elif request.method == 'POST':
         user1 = user.createUserModel(_isUser=True)
         session = db_session.create_session()
@@ -45,6 +45,9 @@ def registrationStage_2_User():
         session.close()
         return redirect('/all-users')
 
+@app.route('/login')  # Страница входа
+def login():
+    return render_template('auth/login.html')
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -53,7 +56,7 @@ def index():
 
 @app.route('/registration/confirmation')
 def registration_confirmation():
-    return render_template('registration_confirmation.html')
+    return render_template('auth/registration_confirmation.html')
 
 
 @app.route('/diary')
