@@ -1,0 +1,7 @@
+/* .video-tags */
+  .video-tags {
+    overflow-x: scroll;
+  }
+  .video-tags::-webkit-scrollbar {
+    display: none;
+  }
