@@ -1,66 +1,79 @@
 /*.btn*/
-    .btn {
-        min-width: 140px;
-        padding: 10px 20px;
-        font-size: 12px;
-    }
+  .btn {
+    min-width: 140px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
 
-    .btn-outline {
-      padding: 5px 20px;
-      border: 1px solid #B9B9B9;
-    }
-    .btn-outline:hover {
-      border-color: var(--color-blue);
-    }
+  .btn-green {
+    color: #fff;
+    background-color: var(--color-green);
 
-    .btn-green {
-      color: #fff;
-      background-color: var(--color-green);
-    }
-    .btn-green:hover {
+    &:hover {
       color: #fff;
       background-color: var(--color-green_dark);
     }
+  }
 
-    .btn-blue {
+  .btn-blue {
+    color: #fff;
+    background-color: var(--color-blue);
+
+    &:hover {
       color: #fff;
-	  background-color: var(--color-blue);
+      background-color: var(--color-blue_dark);
     }
-    .btn-blue:hover {
-      color: #fff;
-	  background-color: var(--color-blue_dark);
-    }
+  }
 
-    .btn-link {
-      min-width: auto;
-      padding: 0;
-      color: var(--color-green);
-    }
+  .btn-round {
+    border-radius: 20px;
+  }
 
-    .btn-link:hover {
+  .btn-outline {
+    padding: 5px 20px;
+    border: 1px solid #B9B9B9;
+
+    &:hover {
+      border-color: var(--color-blue);
+    }
+  }
+
+  .btn-link {
+    min-width: auto;
+    padding: 0;
+    color: var(--color-green);
+
+    &:hover {
       color: var(--color-green_dark);
     }
+  }
 
-    .btn-round {
-      border-radius: 20px;
-    }
+  .btn-tag {
+    min-width: auto;
+    padding: 6px 16px;
+    margin: 0 10px;
 
-    .btn-tag {
-      min-width: auto;
-      padding: 6px 16px;
-      margin: 0 10px;
+    background: #DDDDDD;
+    border-radius: 10px;
 
-      background: #DDDDDD;
-      border-radius: 10px;
-    }
-    .btn-tag.active {
+    &:hover {
       color: #fff;
       background-color: var(--color-green);
     }
 
-    .btn-add-options {
-      min-width: auto;
-      padding: 0 5px;
-
-      align-self: flex-start;
+    &:focus {
+      box-shadow: 0 0 0 1px var(--color-green);
     }
+
+    &.active {
+      color: #fff;
+      background-color: var(--color-green);
+    }
+  }
+
+  .btn-add-options {
+    min-width: auto;
+    padding: 0 5px;
+
+    align-self: flex-start;
+  }
