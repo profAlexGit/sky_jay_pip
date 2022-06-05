@@ -31,6 +31,10 @@
     z-index: 1;
 	}
 
+  #modal-video .modal-fullscreen .video-footer {
+    display: none;
+  }
+
 	@media (min-width: 576px) {
 	  #modal-first-video .modal-dialog {
 	    max-width: 900px;
@@ -44,9 +48,11 @@
 			max-width: 380px;
 		}
 
+		#modal-video .modal-dialog:not(.modal-fullscreen) {
+      margin: 40px;
+		}
 		#modal-video .modal-dialog {
 			max-width: 100%;
-      margin: 40px;
 		}
 	}
 
