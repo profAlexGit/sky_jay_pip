@@ -209,22 +209,23 @@
               <source data-src="{{ url_for('static', filename='videos/example-video/example-video.mp4') }}" type="video/mp4">
             </video>
             <button class="btn btn-play video-player__play" data-state=visible>
-              <svg class="icon-play ms-3" width="56" height="64" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M54 28.5359C56.6667 30.0755 56.6667 33.9245 54 35.4641L6 63.1769C3.33333 64.7165 -3.09442e-06 62.792 -2.95982e-06 59.7128L-5.3709e-07 4.28719C-4.02494e-07 1.20798 3.33333 -0.716519 6 0.823082L54 28.5359Z" fill="white"/>
+              <svg class="icon-play ms-3" width="43" height="50" viewBox="0 0 43 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M42 23.268C43.3333 24.0378 43.3333 25.9623 42 26.7321L3 49.2487C1.66667 50.0185 1.45182e-06 49.0563 1.51912e-06 47.5167L3.48759e-06 2.48334C3.55489e-06 0.943736 1.66667 -0.0185136 3 0.751287L42 23.268Z" fill="white"/>
               </svg>
-              <svg class="icon-pause mx-auto d-none" width="18" height="18" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="4" height="36" rx="2" fill="#ffffff"/>
-                <rect x="14" width="4" height="27" rx="2" fill="#ffffff"/>
+              <svg class="icon-pause mx-auto d-none" width="30" height="45" viewBox="0 0 30 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.66667" height="45" rx="3.33333" fill="white"/>
+                <rect x="23.3333" width="6.66667" height="45" rx="3.33333" fill="white"/>
               </svg>
+
             </button>
             <div class="video-player__controls">
-              <input type="range" min="0" max="100" value="0" class="video-player__duration">
-<!--              <progress value="70" max="100" class="video-player__duration"></progress>-->
+              <input type="range" min="0" max="100" value="0" step="0.01" class="video-player__duration">
+<!--              <progress min="0"  max="100" value="0" class="video-player__duration"></progress>-->
               <button class="btn video-player__playback" data-state="play">
                 <svg class="icon-play" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20 10.268C21.3333 11.0378 21.3333 12.9623 20 13.7321L3.5 23.2583C2.16666 24.0281 0.500001 23.0659 0.500001 21.5263L0.500002 2.47372C0.500002 0.934117 2.16667 -0.0281314 3.5 0.741669L20 10.268Z" fill="#73A9D5"/>
                 </svg>
-                <svg class="icon-pause d-none" width="18" height="18" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-pause d-none" width="21" height="18" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="4" height="27" rx="2" fill="#73A9D5"/>
                   <rect x="14" width="4" height="27" rx="2" fill="#73A9D5"/>
                 </svg>
@@ -241,7 +242,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0354 0.102876C12.8324 0.0149562 12.6098 -0.0174672 12.3902 0.00891433C12.1706 0.0352959 11.962 0.119537 11.7856 0.253041L5.81155 4.98326H1.2498C0.918329 4.98326 0.600439 5.11511 0.366057 5.34979C0.131674 5.58446 0 5.90276 0 6.23465V13.7429C0 14.0748 0.131674 14.3931 0.366057 14.6278C0.600439 14.8625 0.918329 14.9943 1.2498 14.9943H5.81155L11.7231 19.7245C11.943 19.9012 12.216 19.9982 12.498 19.9998C12.6846 20.0029 12.8692 19.96 13.0354 19.8747C13.248 19.7733 13.4278 19.6137 13.5538 19.4145C13.6799 19.2152 13.7471 18.9843 13.7478 18.7485V1.22912C13.7471 0.993251 13.6799 0.762374 13.5538 0.563107C13.4278 0.363841 13.248 0.204298 13.0354 0.102876ZM7.02385 12.7669L11.2482 16.1456V3.83199L7.02385 7.21072C6.80396 7.38737 6.53089 7.48439 6.24898 7.48603H2.49959V12.4916H6.24898C6.53089 12.4932 6.80396 12.5902 7.02385 12.7669Z" fill="#ffffff"/>
                 </svg>
               </button>
-              <input type="range" min="0" max="100" value="50" class="video-player__sound-range" style="background-size: 50% 100%;">
+              <input type="range" min="0" max="100" value="100" class="video-player__sound-range" style="background-size: 100% 100%;">
               <div class="ms-auto">
                 <button class="btn video-player__quality" data-bs-toggle="collapse" data-bs-target="#collapse-video-quality">
                   Качество
@@ -250,12 +251,12 @@
                     <path d="M13.4999 18.3459C12.6099 18.3459 11.7399 18.0719 10.9999 17.5584C10.2599 17.0449 9.68312 16.3151 9.34254 15.4612C9.00195 14.6074 8.91284 13.6678 9.08647 12.7613C9.2601 11.8548 9.68867 11.0222 10.318 10.3687C10.9473 9.71515 11.7491 9.2701 12.622 9.08979C13.4949 8.90948 14.3997 9.00202 15.2219 9.35571C16.0442 9.70939 16.7469 10.3083 17.2414 11.0768C17.7359 11.8453 17.9998 12.7487 17.9998 13.673C18.0058 14.2884 17.8935 14.8988 17.6695 15.4686C17.4455 16.0384 17.1143 16.556 16.6952 16.9912C16.2761 17.4263 15.7777 17.7703 15.229 18.0029C14.6803 18.2356 14.0925 18.3522 13.4999 18.3459ZM13.4999 10.5577C13.1034 10.5481 12.7092 10.6221 12.341 10.7753C11.9729 10.9284 11.6385 11.1575 11.3581 11.4487C11.0776 11.74 10.857 12.0872 10.7095 12.4695C10.562 12.8518 10.4907 13.2612 10.5 13.673C10.4907 14.0847 10.562 14.4941 10.7095 14.8764C10.857 15.2587 11.0776 15.606 11.3581 15.8972C11.6385 16.1884 11.9729 16.4175 12.341 16.5707C12.7092 16.7238 13.1034 16.7979 13.4999 16.7883C13.8964 16.7979 14.2906 16.7238 14.6587 16.5707C15.0269 16.4175 15.3613 16.1884 15.6417 15.8972C15.9221 15.606 16.1428 15.2587 16.2903 14.8764C16.4378 14.4941 16.509 14.0847 16.4998 13.673C16.509 13.2612 16.4378 12.8518 16.2903 12.4695C16.1428 12.0872 15.9221 11.74 15.6417 11.4487C15.3613 11.1575 15.0269 10.9284 14.6587 10.7753C14.2906 10.6221 13.8964 10.5481 13.4999 10.5577Z" fill="#ffffff"/>
                   </svg>
                 </button>
-                <ul class="collapse video-player__quality-list" id="collapse-video-quality">
-                  <li><button class="btn video-player__quality-btn">360</button></li>
-                  <li><button class="btn video-player__quality-btn">480</button></li>
-                  <li><button class="btn video-player__quality-btn">720</button></li>
-                  <li><button class="btn video-player__quality-btn">1080</button></li>
-                </ul>
+                <div class="collapse video-player__quality-list" id="collapse-video-quality">
+                  <button class="btn video-player__quality-btn">360</button>
+                  <button class="btn video-player__quality-btn">480</button>
+                  <button class="btn video-player__quality-btn">720</button>
+                  <button class="btn video-player__quality-btn">1080</button>
+                </div>
                 <button class="btn video-player__fullscreen">
                   <svg width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="2.64706" height="8" rx="1.32353" fill="white"/>
@@ -329,6 +330,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
   <script src="{{ url_for('static', filename='js/simple-keyboard-layouts/index.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
 </body>
 </html>

@@ -9,4 +9,5 @@ import './css/scss/video-tags.scss';
 import './css/scss/video-list.scss';
 import './css/scss/video-player.scss';
 
-//import './js/simple-keyboard-layouts/index.js';
+import './js/script.js';
+import './js/video-player.js';

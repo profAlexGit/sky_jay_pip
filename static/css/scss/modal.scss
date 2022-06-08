@@ -31,8 +31,28 @@
     z-index: 1;
 	}
 
+  #modal-video .btn-close {
+    padding: 15px;
+    background-color: rgba(185, 185, 185, 0.2);
+    border-radius: 50%;
+    filter: invert(1);
+    opacity: 1;
+
+    &:hover {
+      background-color: rgba(185, 185, 185, 0.4);
+    }
+    &:focus {
+      box-shadow: none;
+      background-color: rgba(185, 185, 185, 0.6);
+    }
+  }
+
   #modal-video .modal-fullscreen .video-footer {
     display: none;
+  }
+
+  #modal-video .modal-fullscreen .video-player {
+    max-height: 100vh;
   }
 
 	@media (min-width: 576px) {
