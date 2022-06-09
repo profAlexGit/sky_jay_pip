@@ -23,19 +23,40 @@
             <h5 class="card-title text-center mb-3">Регистрация</h5>
             <div class="d-flex flex-wrap gap-3 mb-3 text-center">
               <div class="d-flex gap-3">
-                <input class="form-control" type="text" name="name" placeholder="Введите имя" required>
-                <input class="form-control" type="text" name="surname" placeholder="Введите фамилию" required>
+              {{ form.hidden_tag() }}
+                    <div>{{ form.name(class="form-control", placeholder="Введите имя") }}
+                        {% for error in form.name.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}</p>
+                        {% endfor %}</div>
+                 <div>{{ form.surname(class="form-control", placeholder="Введите фамилию") }}</div>
               </div>
-              <input class="form-control" type="email" name="email" placeholder="Введите электронную почту" required>
-              <input class="form-control form-control--mask-date" type="text" name="dateBirth" placeholder="Дата рождения" required>
-              <input class="form-control" type="text" name="placeResidence" placeholder="Место проживания (Не обязательно)">
+               {{ form.email(class="form-control", type="email", placeholder="Введите электронную почту") }}
+                    {% for error in form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}</div>
+                    {% endfor %}
+               {{ form.date_birth(class="form-control form-control--mask-date", placeholder="Дата рождения") }}
+                        {% for error in form.date_birth.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}</p>
+                        {% endfor %}
+              {{ form.place_residence(class="form-control", placeholder="Место проживания (не обязательно)") }}
               <div class="d-flex gap-3">
-                <input class="form-control" type="password" name="password" placeholder="Придумайте пароль" required>
-                <input class="form-control" type="password" name="password-repeat" placeholder="Повторите пароль" required>
+                 {{ form.password(class="form-control", type="password", placeholder="Придумайте пароль") }}
+                      {% for error in form.password.errors %}
+                        <p class="alert alert-danger" role="alert">
+                               {{ error }}</p>
+                      {% endfor %}
+                 {{ form.password_again(class="form-control", type="password", placeholder="Повторите пароль") }}
+                      {% for error in form.password_again.errors %}
+                        <p class="alert alert-danger" role="alert">
+                               {{ error }}</p>
+                      {% endfor %}
               </div>
             </div>
             <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
-                <button type="submit" class="btn btn-blue">Далее</button>
+                {{ form.submit(class="btn btn-blue", type="submit") }}
                 <a href="/" class="btn btn-link">Вернуться на главную</a>
             </div>
           </div>
