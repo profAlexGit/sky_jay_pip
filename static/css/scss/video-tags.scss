@@ -1,0 +1,8 @@
+/* .video-tags */
+  .video-tags {
+    padding: 2px 0;
+    overflow-x: scroll;
+  }
+  .video-tags::-webkit-scrollbar {
+    display: none;
+  }

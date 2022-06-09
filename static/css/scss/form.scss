@@ -1,0 +1,70 @@
+/*.form*/
+
+    .form-control {
+        padding: 10px;
+        border: 1px solid #73A9D5;
+		font-size: 12px;
+		line-height: 1.25;
+    }
+    .form-control:focus {
+        box-shadow: none;
+        border-color: var(--color-green);
+    }
+    .form-control::placeholder {
+      font-size: 12px;
+    }
+    .form-control.is-valid, .was-validated .form-control:valid {
+          border-color: var(--color-green_dark);
+    }
+    .form-control.is-valid:not([required]), .was-validated .form-control:valid:not([required]) {
+        background-image: none;
+    }
+
+    .form-search {
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+    }
+
+    .form-control-search {
+        padding: 10px 90px 10px 10px;
+		border: 1px solid #DDDDDD;
+    }
+    .form-search .btn-search {
+        position: absolute;
+        right: 0;
+
+        width: 60px;
+        min-width: auto;
+        height: 100%;
+        padding: 9px 20px;
+        border-radius: 0px 4px;
+    }
+    .form-search .btn-keyboard {
+        position: absolute;
+        right: 60px;
+
+        min-width: auto;
+        width: 36px;
+        height: 100%;
+        padding: 8px;
+    }
+
+    .form-search .btn svg {
+        vertical-align: top;
+    }
+
+    .form-control[type=file] {
+        position:  absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        color: transparent;
+        background: transparent;
+        border: none;
+    }
+    .form-control[type=file]::-webkit-file-upload-button {
+      visibility: hidden;
+    }

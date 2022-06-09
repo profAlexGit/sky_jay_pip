@@ -14,22 +14,22 @@
   })
 })()
 
-// mask input date
-const inputsDate = document.querySelectorAll('.form-control--mask-date');
-Array.from(inputsDate).forEach(input => {
-  input.addEventListener('focus', function() {
-    input.setAttribute('type', 'date');
-  });
-  input.addEventListener('focusout', function() {
-    if (input.value == '') input.setAttribute('type', 'text');
-  });
-});
-
 // modal UserType
 if(window.location.pathname === '/'){
   const modalUserType = new bootstrap.Modal(document.getElementById('modal-user-type'));
   modalUserType.show();
 }
+
+// modal for video of videoList
+  const itemsVideo = document.querySelectorAll('.video-item');
+  Array.from(itemsVideo).forEach(itemVideo => {
+    const itemVideoCover = itemVideo.querySelector('.video-item__cover');
+    itemVideoCover.addEventListener('click', function(e) {
+      e.preventDefault();
+      const modalVideo = new bootstrap.Modal(document.getElementById('modal-video'));
+      modalVideo.show();
+    });
+  });
 
 // Virtual Keyboard
 const Keyboard = window.SimpleKeyboard.default;
@@ -100,44 +100,26 @@ function handleShift() {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
 
-// videoPlayer
-  const videoPlayers = document.querySelectorAll('.video-player');
-  Array.from(videoPlayers).forEach(videoPlayer => {
-    const video = videoPlayer.querySelector('video');
-    const videoPlay = videoPlayer.querySelector('.video-player__play');
-
-    videoPlay.addEventListener("click", function() {
-      if (video.paused || video.ended) video.play();
-      else video.pause();
-
-      videoPlay.setAttribute('data-state','hidden');
-    });
-  });
-  
-  const itemsVideo = document.querySelectorAll('.video-item');
-  Array.from(itemsVideo).forEach(itemVideo => {
-    const itemVideoCover = itemVideo.querySelector('.video-item__cover');
-    itemVideoCover.addEventListener('click', function(e) {
-      e.preventDefault();
-      const modalVideo = new bootstrap.Modal(document.getElementById('modal-video'));
-      modalVideo.show();
-    });
-  });
-
-  // inputs Range
+// inputs Range
   const inputsRange = document.querySelectorAll('input[type="range"]');
-
   function handleInputChange(e) {
     let target = e.target;
     const min = target.min;
     const max = target.max;
     const val = target.value;
-
     target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
-
-    console.log('change')
   };
-
   Array.from(inputsRange).forEach(input => {
     input.addEventListener('change', handleInputChange);
+  });
+
+// mask input date
+  const inputsDate = document.querySelectorAll('.form-control--mask-date');
+  Array.from(inputsDate).forEach(input => {
+    input.addEventListener('focus', function() {
+      input.setAttribute('type', 'date');
+    });
+    input.addEventListener('focusout', function() {
+      if (input.value == '') input.setAttribute('type', 'text');
+    });
   });

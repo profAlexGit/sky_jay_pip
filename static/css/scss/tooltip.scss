@@ -1,0 +1,14 @@
+  /*.tooltip*/
+    .tooltip {
+    }
+    .tooltip-inner {
+      padding: 1rem 0.5rem;
+      border-radius: 0;
+    }
+    .tooltip a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .tooltip a:hover {
+      text-decoration: underline;
+    }

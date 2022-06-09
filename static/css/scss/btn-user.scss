@@ -1,0 +1,38 @@
+/* .btn-user */
+    .btn-user {
+        padding: 110px 10px 20px;
+        width: 250px;
+
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.2;
+
+        border-radius: 10px;
+        background: #B9B9B9 url(/img/picture-crying.svg) no-repeat top 15px center;
+    }
+
+    .btn-user:hover {
+        color: #fff;
+      background-color: var(--color-blue_dark);
+    }
+
+    .wrap-btn-radio input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+    .wrap-btn-radio input[type="radio"]:checked + .btn-user {
+      background-color: var(--color-blue);
+    }
+
+    .btn-user--psycholog {
+        background-image: url(/img/picture-psycholog.svg);
+        background-position: top center;
+    }
