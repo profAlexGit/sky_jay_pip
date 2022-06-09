@@ -8,11 +8,22 @@
         <div class="card border-sm-0">
           <div class="card-body">
             <form id="form-login" class="text-center needs-validation" novalidate method="post">
+            {{ form.hidden_tag() }}
               <h5 class="card-title color-green text-center mb-3">Вход</h5>
-              <input class="form-control mb-3" type="email" placeholder="Введите адрес электронной почты" required>
-              <input class="form-control mb-3" type="password" placeholder="Введите ваш пароль" required>
+              {{ form.email(class="form-control mb-3", type="email", placeholder="Введите адрес электронной почты") }}
+                {% for error in form.email.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}</div>
+                {% endfor %}
+                {{ form.password(class="form-control mb-3", type="password", placeholder="Введите ваш пароль") }}
+                 {% for error in form.password.errors %}
+                     <div class="alert alert-danger" role="alert">
+                         {{ error }}
+                     </div>
+                 {% endfor %}
               <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
-                <button type="submit" class="btn btn-blue">Войти</button>
+              {{ form.submit(type="submit", class="btn btn-blue") }}
+                      <div>{{ message }}</div>
                 <a href="#" class="btn btn-link">Забыли пароль?</a>
               </div>
               <a href="/registration/user" class="btn btn-link color-blue mt-4">Зарегистрироваться</a>
