@@ -1,8 +1,11 @@
   /*.video-player */
     .video-player {
       position: relative;
-      max-height: 80vh;
       background: #000000;
+
+      &:not(:fullscreen) {
+        max-height: 80vh;
+      }
 
       &__controls {
         position: absolute;
@@ -17,6 +20,7 @@
         background: rgba(0, 0, 0, 0.5);
 
         z-index: 1;
+        transition: 0.5s;
 
         .btn {
           min-width: auto;
