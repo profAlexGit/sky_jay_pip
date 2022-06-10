@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="container mw-580">
+    <form class="row justify-content-center needs-validation form-reg" novalidate method="post">
+      <div class="col-md-4 order-last order-md-first">
+        <div class="card border-sm-0">
+          <div class="card-body text-center">
+            <div class="user-avatar">
+              <img src="{{ url_for('static', filename='img/avatar-user-02.png') }}" alt="">
+            </div>
+            <button class="btn btn-link mt-2">
+              Сменить фото
+            </button>
+            <input type="file" accept=".jpg,.png" name="avatar" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card border-sm-0">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-3">Параметры</h5>
+            <div class="d-flex flex-wrap gap-3 mb-3 text-center">
+              <div class="d-flex gap-3">
+              {{ form.hidden_tag() }}
+                    <div>{{ form.name(class="form-control", placeholder="Введите имя") }}
+                        {% for error in form.name.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}</p>
+                        {% endfor %}</div>
+                 <div>{{ form.surname(class="form-control", placeholder="Введите фамилию") }}</div>
+              </div>
+               {{ form.email(class="form-control", type="email", placeholder="Введите электронную почту") }}
+                    {% for error in form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}</div>
+                    {% endfor %}
+               {{ form.date_birth(class="form-control form-control--mask-date", placeholder="Дата рождения") }}
+                        {% for error in form.date_birth.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}</p>
+                        {% endfor %}
+              {{ form.place_residence(class="form-control", placeholder="Место проживания (не обязательно)") }}
+              <div class="d-flex gap-3">
+                 {{ form.password(class="form-control", type="password", placeholder="Придумайте пароль") }}
+                      {% for error in form.password.errors %}
+                        <p class="alert alert-danger" role="alert">
+                               {{ error }}</p>
+                      {% endfor %}
+                 {{ form.password_again(class="form-control", type="password", placeholder="Повторите пароль") }}
+                      {% for error in form.password_again.errors %}
+                        <p class="alert alert-danger" role="alert">
+                               {{ error }}</p>
+                      {% endfor %}
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
+                {{ form.submit(class="btn btn-blue", type="submit") }}
+                <a href="/" class="btn btn-link">Вернуться на главную</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

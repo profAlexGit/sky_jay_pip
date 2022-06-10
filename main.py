@@ -84,6 +84,9 @@ def index():
 def registration_confirmation():
     return render_template('auth/registration_confirmation.html')
 
+@app.route('/cabinet')
+def user_cabinet():
+    return render_template('user-cabinet.html')
 
 @app.route('/diary')
 def diary():
