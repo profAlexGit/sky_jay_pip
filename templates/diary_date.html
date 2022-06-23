@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+  <!-- Modal for date-picker -->
+  <div class="modal" id="modal-date-note" tabindex="-1" style="display: block;">  <!-- fade -->
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body card p-4">
+          <form class="">
+            <p class="h5 mb-2 color-blue text-center">Выберите дату</p>
+            <div class="input-date-note"></div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+<!--              <button type="submit" class="btn btn-blue">Создать запись</button>-->
+              <a href="/diary/date/createnote" class="btn btn-blue">Создать запись</a>
+              <a href="/diary" class="btn btn-link">Вернуться назад</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

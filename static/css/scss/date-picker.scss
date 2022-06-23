@@ -1,0 +1,41 @@
+.dp-cal-header,
+.dp-cal-footer {
+  background: transparent;
+}
+.dp-permanent {
+  width: auto;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.dp-permanent .dp {
+  border: none;
+}
+
+.dp-selected:hover, .dp-selected:focus, .dp-selected,
+.dp-close:hover, .dp-close:focus, .dp-clear:hover, .dp-clear:focus, .dp-today:hover, .dp-today:focus,
+.dp-next:hover, .dp-next:focus, .dp-prev:hover, .dp-prev:focus,
+.dp-cal-month:focus, .dp-cal-month:hover, .dp-cal-year:hover, .dp-cal-year:focus {
+  background: var(--color-blue);
+}
+.dp-day-today:after {
+  border-top-color: var(--color-blue_dark);
+  border-right-color: var(--color-blue_dark);
+}
+.dp-day:hover, .dp-month:hover, .dp-year:hover,
+.dp-day:focus, .dp-month:focus, .dp-year:focus,
+.dp-current {
+  background: var(--color-blue_dark);
+}
+
+.dp-cal-month, .dp-cal-year {
+  padding: 8px;
+}
+
+.dp-cal-header {
+  padding-top: 12px;
+}
+
+.dp-cal-footer {
+  padding: 12px 0;
+}

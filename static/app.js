@@ -9,5 +9,10 @@ import './css/scss/video-tags.scss';
 import './css/scss/video-list.scss';
 import './css/scss/video-player.scss';
 
+import  './node_modules/tiny-date-picker/tiny-date-picker.css';
+import './css/scss/date-picker.scss';
+
 import './js/script.js';
 import './js/video-player.js';
+
+import './js/date-picker.js';

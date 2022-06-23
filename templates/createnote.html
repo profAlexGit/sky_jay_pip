@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <form class="col mx-auto mw-780">
+        <textarea id="note-textarea" class="form-control form-control-note mb-4" placeholder="Введите текст..."></textarea>
+
+        <div class="d-flex gap-5 justify-content-center align-items-center">
+          <button type="submit" class="btn btn-blue">Сохранить</button>
+          <a href="/diary/date" class="btn btn-link">Вернуться назад</a>
+        </div>
+      </form>
+
+      <div class="col-lg-3">
+        <div class="">
+          <button class="btn">Текст</button>
+          <button class="btn">Рисовать</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
