@@ -5,28 +5,39 @@ var config = {
   entry: '/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
-    rules: [{
-       test:/\.(s*)css$/,
-       use: [
-          miniCss.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            }
-          },
-          'resolve-url-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true, // <-- !!IMPORTANT!!
-            }
+    rules: [
+    {
+      test:/\.(s*)css$/,
+      use: [
+        miniCss.loader,
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
           }
-       ]
-    }]
+        },
+        'resolve-url-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true, // <-- !!IMPORTANT!!
+          }
+        }
+      ]
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+      }]
   },
   plugins: [
     new miniCss({
