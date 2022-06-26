@@ -318,7 +318,8 @@ a:hover {
 
 .form-select {
   width: auto;
-  border: none; }
+  border: none;
+  font-size: inherit; }
 
 .form-control-color {
   max-width: 45px;

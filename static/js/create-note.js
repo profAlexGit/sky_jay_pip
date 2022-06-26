@@ -1,89 +1,6 @@
-// канвас поле для рисования в заметке
-var canvas, ctx, flag = false,
-    prevX = 0,
-    currX = 0,
-    prevY = 0,
-    currY = 0,
-    dot_flag = false;
+import {initModeDraw, lineSetting} from'./canvas-drawing.js';
 
-var lineColor = "black",
-    lineWeight = 2;
-
-function initModeDraw() {
-    canvas = document.getElementById('note-canvas');
-    ctx = canvas.getContext("2d");
-    w = canvas.clientWidth;
-    h = canvas.clientHeight;
-    resizeCanvasToDisplaySize(ctx.canvas);
-
-    canvas.addEventListener("mousemove", function (e) {
-        findxy('move', e);
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
-        findxy('down', e)
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        findxy('up', e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
-        findxy('out', e)
-    }, false);
-}
-
-function draw() {
-    ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
-    ctx.strokeStyle = lineColor
-    ctx.lineWidth = lineWeight;
-    ctx.stroke();
-    ctx.closePath();
-}
-
-function findxy(res, e) {
-    const parentCanvas = canvas.closest('.col');
-    if (res == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - parentCanvas.offsetLeft - 12;
-        currY = e.clientY - parentCanvas.offsetTop;
-
-        flag = true;
-        dot_flag = true;
-        if (dot_flag) {
-            ctx.beginPath();
-            ctx.fillStyle = lineColor;
-            ctx.fillRect(currX, currY, 2, 2);
-            ctx.closePath();
-            dot_flag = false;
-        }
-    }
-    if (res == 'up' || res == "out") {
-        flag = false;
-    }
-    if (res == 'move') {
-        if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - parentCanvas.offsetLeft - 12;
-            currY = e.clientY - parentCanvas.offsetTop;
-            draw();
-        }
-    }
-}
-
-function resizeCanvasToDisplaySize(canvas) {
-   const width = canvas.clientWidth;
-   const height = canvas.clientHeight;
-
-   if (canvas.width !== width || canvas.height !== height) {
-     canvas.width = width;
-     canvas.height = height;
-     return true;
-   }
-
-   return false;
-}
+const textareaNote = document.querySelector('#note-textarea');
 
 const buttonModeDraw = document.querySelector('button[data-bs-target="#note-mode-draw"]');
 if (buttonModeDraw) buttonModeDraw.addEventListener('shown.bs.tab', function (e) {
@@ -91,10 +8,22 @@ if (buttonModeDraw) buttonModeDraw.addEventListener('shown.bs.tab', function (e)
   initModeDraw();
 });
 
+const selectTextWeight = document.querySelector('[name="note-mode-text_weigth"]');
+if (selectTextWeight) selectTextWeight.addEventListener('input', function(e) {
+  textareaNote.style.fontWeight = this.value;
+  lineSetting.weight = this.value/100;
+});
+
+const selectTextSize = document.querySelector('[name="note-mode-text_size"]');
+if (selectTextSize) selectTextSize.addEventListener('input', function(e) {
+  textareaNote.style.fontSize = this.value + 'px';
+});
+
 const inputColor = document.querySelector('#note-mode-text_color');
 const inputColorLabel = document.querySelector('#note-mode-text_color + label');
-if(inputColor) inputColor.addEventListener('input', function(e) {
-  lineColor = this.value;
+if (inputColor) inputColor.addEventListener('input', function(e) {
+  lineSetting.color = this.value;
   inputColorLabel.innerText = this.value;
+  textareaNote.style.color = this.value;
 });
 
