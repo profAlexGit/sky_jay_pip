@@ -1,4 +1,3 @@
-import flask_login
 from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 from werkzeug.utils import redirect
@@ -84,9 +83,20 @@ def index():
 def registration_confirmation():
     return render_template('auth/registration_confirmation.html')
 
-@app.route('/cabinet')
+
+@app.route('/cabinet/user', methods=['GET', 'POST'])
 def user_cabinet():
-    return render_template('user-cabinet.html')
+    form = RegisterForm()
+    if current_user.is_authenticated:
+        return render_template('user-cabinet.html', form=form)
+    else:
+        return redirect('/login')
+
+
+@app.route('/cabinet/psychologist', methods=['GET', 'POST'])
+def psycho_cabinet():
+    pass
+
 
 @app.route('/diary')
 def diary():

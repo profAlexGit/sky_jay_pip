@@ -1,4 +1,4 @@
-import sqlalchemy as sa
+import sqlalchemy
 
 from .db_session import SqlAlchemyBase
 
@@ -6,25 +6,9 @@ from .db_session import SqlAlchemyBase
 class Video(SqlAlchemyBase):
     __tablename__ = 'video'
 
-    id = sa.Column(sa.Integer, primary_key=True)
-    user_id = sa.Column(sa.Integer, nullable=False)
-    video = sa.Column(sa.String, nullable=False)
-    cover = sa.Column(sa.String, nullable=False)
-    title = sa.Column(sa.String, nullable=False)
-    description = sa.Column(sa.Text, default='Описание отсутствует')
-
-
-def createVideoModel(user_id: int, video_path: str, cover_path: str, title: str,
-                     description: str = 'Описание отсутствует') -> Video:
-    """
-    Функция создающая и возвращающая экземпляр класса Video
-
-    user_id - Идентификатор пользователя привязывающийся к видео
-    video_path - Путь к видео которое будет отображаться на странице
-    cover_path - Путь к картинке обложке видео
-    title - Название видео
-    description - Описание видео
-    """
-
-    video = Video(user_id=user_id, video=video_path, cover=cover_path, title=title, description=description)
-    return video
+    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
+    user_id = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
+    video = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    cover = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    title = sqlalchemy.Column(sqlalchemy.String(100), nullable=False)
+    description = sqlalchemy.Column(sqlalchemy.Text(500), default='Описание отсутствует')
