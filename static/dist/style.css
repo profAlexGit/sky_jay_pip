@@ -40,6 +40,10 @@ a:hover {
 .nav-link:hover {
   color: var(--color-green_dark); }
 
+.header {
+  position: relative;
+  z-index: 1040; }
+
 .header .nav-link {
   color: var(--color-green); }
 
@@ -185,6 +189,24 @@ a:hover {
   padding: 0 5px;
   align-self: flex-start; }
 
+.btn-mode-note {
+  padding: 0 12px;
+  min-width: auto; }
+  .btn-mode-note .icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    margin-right: 6px;
+    border: 2px solid transparent;
+    border-radius: 4px; }
+  .btn-mode-note.active .icon {
+    border-color: var(--color-green); }
+  .btn-mode-note:focus {
+    box-shadow: none; }
+  .btn-mode-note:focus:not(.active) .icon {
+    border-color: #cccccc; }
+
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./css/scss/btn-user.scss ***!
   \********************************************************************************************************************************************************************************************************************/
@@ -293,6 +315,16 @@ a:hover {
   .form-control-note::placeholder {
     color: #B9B9B9;
     font-size: inherit; }
+
+.form-select {
+  width: auto;
+  border: none;
+  font-size: inherit; }
+
+.form-control-color {
+  max-width: 45px;
+  padding: 12px;
+  border: none; }
 
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./css/scss/modal.scss ***!

@@ -1,6 +1,144 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/canvas-drawing.js":
+/*!******************************!*\
+  !*** ./js/canvas-drawing.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "draw": () => (/* binding */ draw),
+/* harmony export */   "findxy": () => (/* binding */ findxy),
+/* harmony export */   "initModeDraw": () => (/* binding */ initModeDraw),
+/* harmony export */   "lineSetting": () => (/* binding */ lineSetting),
+/* harmony export */   "resizeCanvasToDisplaySize": () => (/* binding */ resizeCanvasToDisplaySize)
+/* harmony export */ });
+// канвас поле для рисования в заметке
+var canvas,
+    ctx,
+    flag = false,
+    prevX = 0,
+    currX = 0,
+    prevY = 0,
+    currY = 0,
+    dot_flag = false;
+var lineSetting = {
+  color: "black",
+  weight: 2
+};
+function initModeDraw() {
+  canvas = document.getElementById('note-canvas');
+  ctx = canvas.getContext("2d");
+  resizeCanvasToDisplaySize(ctx.canvas);
+  canvas.addEventListener("mousemove", function (e) {
+    findxy('move', e);
+  }, false);
+  canvas.addEventListener("mousedown", function (e) {
+    findxy('down', e);
+  }, false);
+  canvas.addEventListener("mouseup", function (e) {
+    findxy('up', e);
+  }, false);
+  canvas.addEventListener("mouseout", function (e) {
+    findxy('out', e);
+  }, false);
+}
+function draw() {
+  ctx.beginPath();
+  ctx.moveTo(prevX, prevY);
+  ctx.lineTo(currX, currY);
+  ctx.strokeStyle = lineSetting.color;
+  ctx.lineWidth = lineSetting.weight;
+  ctx.stroke();
+  ctx.closePath();
+}
+function findxy(res, e) {
+  var parentCanvas = canvas.closest('.col');
+
+  if (res == 'down') {
+    prevX = currX;
+    prevY = currY;
+    currX = e.clientX - parentCanvas.offsetLeft - 12;
+    currY = e.clientY - parentCanvas.offsetTop;
+    flag = true;
+    dot_flag = true;
+
+    if (dot_flag) {
+      ctx.beginPath();
+      ctx.fillStyle = lineSetting.color;
+      ctx.fillRect(currX, currY, 2, 2);
+      ctx.closePath();
+      dot_flag = false;
+    }
+  }
+
+  if (res == 'up' || res == "out") {
+    flag = false;
+  }
+
+  if (res == 'move') {
+    if (flag) {
+      prevX = currX;
+      prevY = currY;
+      currX = e.clientX - parentCanvas.offsetLeft - 12;
+      currY = e.clientY - parentCanvas.offsetTop;
+      draw();
+    }
+  }
+}
+function resizeCanvasToDisplaySize(canvas) {
+  var width = canvas.clientWidth;
+  var height = canvas.clientHeight;
+
+  if (canvas.width !== width || canvas.height !== height) {
+    canvas.width = width;
+    canvas.height = height;
+    return true;
+  }
+
+  return false;
+}
+
+/***/ }),
+
+/***/ "./js/create-note.js":
+/*!***************************!*\
+  !*** ./js/create-note.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _canvas_drawing_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvas-drawing.js */ "./js/canvas-drawing.js");
+
+var textareaNote = document.querySelector('#note-textarea');
+var buttonModeDraw = document.querySelector('button[data-bs-target="#note-mode-draw"]');
+if (buttonModeDraw) buttonModeDraw.addEventListener('shown.bs.tab', function (e) {
+  e.target;
+  (0,_canvas_drawing_js__WEBPACK_IMPORTED_MODULE_0__.initModeDraw)();
+});
+var selectTextWeight = document.querySelector('[name="note-mode-text_weigth"]');
+if (selectTextWeight) selectTextWeight.addEventListener('input', function (e) {
+  textareaNote.style.fontWeight = this.value;
+  _canvas_drawing_js__WEBPACK_IMPORTED_MODULE_0__.lineSetting.weight = this.value / 100;
+});
+var selectTextSize = document.querySelector('[name="note-mode-text_size"]');
+if (selectTextSize) selectTextSize.addEventListener('input', function (e) {
+  textareaNote.style.fontSize = this.value + 'px';
+});
+var inputColor = document.querySelector('#note-mode-text_color');
+var inputColorLabel = document.querySelector('#note-mode-text_color + label');
+if (inputColor) inputColor.addEventListener('input', function (e) {
+  _canvas_drawing_js__WEBPACK_IMPORTED_MODULE_0__.lineSetting.color = this.value;
+  inputColorLabel.innerText = this.value;
+  textareaNote.style.color = this.value;
+});
+
+/***/ }),
+
 /***/ "./js/date-picker.js":
 /*!***************************!*\
   !*** ./js/date-picker.js ***!
@@ -1780,6 +1918,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./js/video-player.js */ "./js/video-player.js");
 /* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_js_video_player_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _js_date_picker_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/date-picker.js */ "./js/date-picker.js");
+/* harmony import */ var _js_create_note_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/create-note.js */ "./js/create-note.js");
+
 
 
 

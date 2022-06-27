@@ -16,3 +16,4 @@ import './js/script.js';
 import './js/video-player.js';
 
 import './js/date-picker.js';
+import './js/create-note.js';

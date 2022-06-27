@@ -6,19 +6,80 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-3"></div>
-      <form class="col mx-auto mw-780">
-        <textarea id="note-textarea" class="form-control form-control-note mb-4" placeholder="Введите текст..."></textarea>
-
+      <form class="col mx-auto mb-4">
+        <div class="tab-content" id="note-mode-tabContent">
+           <div class="tab-pane fade show active" id="note-mode-text" role="tabpanel" aria-labelledby="note-mode-text-tab">
+            <textarea id="note-textarea" class="form-control form-control-note mb-4" placeholder="Введите текст..."></textarea>
+           </div>
+           <div class="tab-pane fade" id="note-mode-draw" role="tabpanel" aria-labelledby="note-mode-draw-tab">
+             <div class="">
+              <canvas id="note-canvas" class="form-control form-control-note p-0 mb-4"></canvas>
+             </div>
+           </div>
+        </div>
         <div class="d-flex gap-5 justify-content-center align-items-center">
           <button type="submit" class="btn btn-blue">Сохранить</button>
           <a href="/diary/date" class="btn btn-link">Вернуться назад</a>
         </div>
       </form>
+      <div class="col-lg-3 order-first order-lg-last mb-4">
+        <div class="nav nav-note-mode mb-4 gap-4" id="note-mode-tab" role="tablist">
+          <button class="btn btn-mode-note active" id="note-mode-text-tab" data-bs-toggle="pill" data-bs-target="#note-mode-text" type="button" role="tab" aria-controls="note-mode-text" aria-selected="true">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_23_132)">
+              <path d="M14.1014 0H1.87776C1.316 0 0.843689 0.449416 0.843689 1.03407V1.19219C0.843689 1.21507 0.843689 1.21507 0.843689 1.21507V2.67566V2.69853V4.92271C0.843689 5.48447 1.29311 5.95679 1.87776 5.95679H3.69622C4.25798 5.95679 4.7303 5.50737 4.7303 4.92271V3.86576H6.03277V12.0676H4.59506C4.05617 12.0676 3.60676 12.517 3.60676 13.0559V14.9888C3.60676 15.5277 4.05617 15.9771 4.59506 15.9771H6.34695C6.36982 15.9771 6.41354 16 6.45931 16H9.51576C9.56153 16 9.58233 16 9.60523 15.9771H11.3134C11.8523 15.9771 12.3017 15.5277 12.3017 14.9888V13.0788C12.3017 12.5399 11.8523 12.0905 11.3134 12.0905H9.9194V3.88869H11.2677V4.94564C11.2677 5.50739 11.7171 5.97971 12.3017 5.97971H14.1223C14.684 5.97971 15.1563 5.53029 15.1563 4.94564V1.03407C15.1355 0.472292 14.6632 0 14.1014 0ZM14.3033 4.94355C14.3033 5.0559 14.2138 5.14536 14.1015 5.14536H12.2809C12.1686 5.14536 12.0791 5.0559 12.0791 4.94355V3.48296C12.0791 3.25826 11.9002 3.07932 11.6755 3.07932H9.49497C9.27026 3.07932 9.09132 3.25826 9.09132 3.48296V12.517C9.09132 12.7417 9.27026 12.9207 9.49497 12.9207H11.3155C11.405 12.9207 11.4736 12.9872 11.4736 13.0788V14.9888C11.4736 15.0783 11.4071 15.1469 11.3155 15.1469H9.49497C9.44919 15.1469 9.4284 15.1469 9.38263 15.1698H6.55084C6.52796 15.1698 6.48425 15.1469 6.4385 15.1469H4.57426C4.48479 15.1469 4.41614 15.0804 4.41614 14.9888V13.0788C4.41614 12.9893 4.48274 12.9207 4.57426 12.9207H6.4385C6.6632 12.9207 6.84214 12.7417 6.84214 12.517V3.46217C6.84214 3.23746 6.6632 3.05853 6.4385 3.05853H4.30376C4.07905 3.05853 3.90011 3.23746 3.90011 3.46217V4.92276C3.90011 5.0351 3.81065 5.12459 3.6983 5.12459H1.87776C1.7654 5.12459 1.67593 5.03513 1.67593 4.92276V2.67568V2.6528V1.23796C1.67593 1.21509 1.67593 1.21509 1.67593 1.21509V1.03616C1.67593 0.923813 1.7654 0.834346 1.87776 0.834346H14.1015C14.2138 0.834346 14.3033 0.923813 14.3033 1.03616V4.94355Z" fill="#3E3E3E"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_23_132">
+              <rect width="16" height="16" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+            </span>
+            Текст
+          </button>
+          <button class="btn btn-mode-note"  id="note-mode-draw-tab" data-bs-toggle="pill" data-bs-target="#note-mode-draw" type="button" role="tab" aria-controls="note-mode-draw" aria-selected="false">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_23_136)">
+              <path d="M1.96917 10.9687C0.707668 12.2087 1.77317 13.4818 0.0966678 15.3692C-0.659999 16.2213 3.21167 15.9615 5.12983 14.0758C5.9435 13.2762 5.714 12.1103 4.84133 11.2523C3.96867 10.3943 2.78267 10.169 1.96917 10.9687ZM15.9502 0.215491C15.3025 -0.420676 8.13433 5.32333 6.00033 7.42133C4.94133 8.46233 4.58767 9.02049 4.263 9.43799C4.12183 9.61916 4.30833 9.67533 4.39233 9.71816C4.81183 9.93166 5.10517 10.1307 5.4845 10.5035C5.864 10.8763 6.0665 11.1648 6.28367 11.577C6.32717 11.6597 6.38433 11.8432 6.56833 11.7047C6.99333 11.3855 7.56084 11.0378 8.61984 9.99666C10.754 7.89866 16.5972 0.851825 15.9502 0.215491Z" fill="#3E3E3E"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_23_136">
+              <rect width="16" height="16" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+            </span>
+            Рисовать
+          </button>
+        </div>
 
-      <div class="col-lg-3">
-        <div class="">
-          <button class="btn">Текст</button>
-          <button class="btn">Рисовать</button>
+        <div class="tab-content" id="note-mode-tabContent_settings">
+          <div class="tab-pane fade show active" id="note-mode-text_settings" role="tabpanel" aria-labelledby="note-mode-text-tab_settings">
+           <div class="d-flex gap-2 mb-2">
+             <select class="form-select" name="note-mode-text_weigth">
+               <option value="300">Тонкий</option>
+               <option value="400" selected>Нормальный</option>
+               <option value="800">Жирный</option>
+             </select>
+             <select class="form-select" name="note-mode-text_size">
+               <option value="12">12px</option>
+               <option value="16" selected>16px</option>
+               <option value="24">24px</option>
+               <option value="32">32px</option>
+               <option value="48">48px</option>
+             </select>
+           </div>
+            <div class="d-flex align-items-center">
+             <input type="color" name="note-mode-text_color" id="note-mode-text_color" class="form-control form-control-color">
+             <label for="note-mode-text_color" class="">#000000</label>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="note-mode-draw_settings" role="tabpanel" aria-labelledby="note-mode-draw-tab_settings">
+
+          </div>
         </div>
       </div>
 

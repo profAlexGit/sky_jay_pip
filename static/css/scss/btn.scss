@@ -77,3 +77,30 @@
 
     align-self: flex-start;
   }
+
+  .btn-mode-note {
+    padding: 0 12px;
+    min-width: auto;
+
+    .icon {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      padding: 6px;
+      margin-right: 6px;
+
+      border: 2px solid transparent;
+      border-radius: 4px;
+    }
+
+    &.active .icon {
+      border-color: var(--color-green);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+    &:focus:not(.active) .icon {
+      border-color: #cccccc;
+    }
+  }
