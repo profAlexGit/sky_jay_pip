@@ -1,7 +1,143 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="vh-75 d-flex justify-content-center align-items-center">
-    <a href="/diary/date" class="btn btn-green btn-round">Создать запись +</a>
-  </section>
+<section class="padding-for-navbar">
+  <div class="container-fluid">
+    <section class="vh-75 d-flex flex-column justify-content-center align-items-center mb-4">
+<!--      если есть записи-->
+      <h5 class="text-center mb-4 color-green">Мои записи</h5>
+      <div class="note-list row row-cols-1 row-cols-md-3 row-cols-lg-5 align-items-stretch">
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; font-weight: ; text-align: ; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="note-item__draw">
+              <img src="{{ url_for('static', filename='notes/example.png') }}" alt="draw 12.04.2022" class="w-100">
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: serif; font-weight: 800;  text-align: center; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; font-weight: 400; text-align: ; color: #737FF3; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; text-align: ; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; font-weight: ; text-align: ; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="note-item__draw">
+              <img src="{{ url_for('static', filename='notes/example.png') }}" alt="draw 12.04.2022" class="w-100">
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: serif; font-weight: 800;  text-align: center; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; font-weight: 400; text-align: ; color: #737FF3; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="note-item card">
+            <div class="card-body">
+              <div class="note-item__text" style="font-family: ; text-align: ; color: ; ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lectus sed ultricies egestas purus lectus. Pellentesque habitant volutpat turpis vitae lorem mattis praesent curabitur sed. Nisl aliquet molestie et parturient.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="note-item__date">12.04.2022</span>
+              <a href="/diary/date/createnote" class="btn btn-link">Открыть</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<!---->
+      <a href="/diary/date" class="btn btn-green btn-round">Создать запись +</a>
+    </section>
+  </div>
+</section>
 {% endblock %}
