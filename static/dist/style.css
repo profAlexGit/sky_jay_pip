@@ -90,7 +90,7 @@ a:hover {
   border-color: #E7E7E7; }
 
 .vh-75 {
-  height: 75vh; }
+  min-height: 75vh; }
 
 .mw-580 {
   max-width: 580px; }
@@ -386,10 +386,11 @@ a:hover {
   .modal-dialog {
     margin: 0; }
   .modal-content {
-    min-height: 100vh;
     justify-content: center;
     padding: 1rem;
     border-radius: 0px; }
+  .modal.show .modal-content {
+    min-height: 100vh; }
   .modal-body {
     flex-grow: 0; }
   #modal-video .modal-content {
@@ -695,6 +696,27 @@ a:hover {
   .video-footer__autor {
     max-width: 100%;
     flex-grow: 1; } }
+
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./css/scss/note-list.scss ***!
+  \*********************************************************************************************************************************************************************************************************************/
+.note-item {
+  min-height: 250px;
+  height: 100%;
+  border-radius: 0px 0px 6px 6px; }
+  .note-item .card-footer {
+    background: transparent; }
+  .note-item__text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px; }
+  .note-item__draw {
+    flex: 1 1 auto; }
+  .note-item__date {
+    font-weight: 500;
+    font-size: 13px;
+    color: #8B8B8B; }
 
 /*!************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./node_modules/tiny-date-picker/tiny-date-picker.css ***!
@@ -1016,6 +1038,10 @@ a:hover {
 
 .dp-cal-header {
   padding-top: 12px; }
+
+.dp-cal {
+  min-height: auto;
+  margin-bottom: 8px; }
 
 .dp-cal-footer {
   padding: 12px 0; }
