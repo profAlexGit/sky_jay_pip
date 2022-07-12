@@ -1,3 +1,1 @@
-from . import user
-from . import video
-from . import note
+from . import models

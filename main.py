@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 from werkzeug.utils import redirect
 
-from data import db_session, user
-from data.user import User
+from data import db_session
+from data.models import User
 from forms.login_form import LoginForm
 from forms.register_form import RegisterForm
 
@@ -37,7 +37,6 @@ def registration_user():
             email=form.email.data,
             date_birth=form.date_birth.data,
             place_residence=form.place_residence.data,
-            isUser=False,
         )
         user.set_password(form.password.data)
         db_sess.add(user)
@@ -69,9 +68,9 @@ def logout():
 
 
 @login_manager.user_loader
-def load_user(user_id):
+def load_user(id):
     db_sess = db_session.create_session()
-    return db_sess.query(User).get(user_id)
+    return db_sess.query(User).get(id)
 
 
 @app.route('/', methods=['POST', 'GET'])
