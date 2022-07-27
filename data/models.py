@@ -78,7 +78,7 @@ class Videos(SqlAlchemyBase):
     title = sqlalchemy.Column(sqlalchemy.String(30), nullable=False)
     description = sqlalchemy.Column(sqlalchemy.Text(200), nullable=True)
     cover = sqlalchemy.Column(sqlalchemy.String)
-    date_time = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.now)
+    date_time = sqlalchemy.Column(sqlalchemy.DateTime)
     psycho = orm.relation('Psychologist')
     statistics = orm.relation('Statistics', back_populates='video')
 
