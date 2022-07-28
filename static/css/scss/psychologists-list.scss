@@ -1,0 +1,23 @@
+.psychologists-item {
+  border-color: var(--color-blue);
+
+  &__name {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__job {
+    font-weight: 500;
+  }
+
+  &__fact {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  &__exp-length {
+    white-space: nowrap;
+  }
+}

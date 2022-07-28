@@ -66,7 +66,8 @@ a:hover {
   height: 100px;
   margin: 0 auto;
   background: #DDDDDD;
-  border-radius: 50%; }
+  border-radius: 50%;
+  overflow: hidden; }
 
 .user-avatar img {
   max-width: 100%;
@@ -97,6 +98,9 @@ a:hover {
 
 .mw-780 {
   max-width: 780px; }
+
+.text-muted {
+  color: #B9B9B9; }
 
 @media (max-width: 576px) {
   .border-sm-0 {
@@ -135,7 +139,6 @@ a:hover {
   \***************************************************************************************************************************************************************************************************************/
 /*.btn*/
 .btn {
-  min-width: 140px;
   padding: 10px 20px;
   font-size: 12px; }
 
@@ -717,6 +720,24 @@ a:hover {
     font-weight: 500;
     font-size: 13px;
     color: #8B8B8B; }
+
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./css/scss/psychologists-list.scss ***!
+  \******************************************************************************************************************************************************************************************************************************/
+.psychologists-item {
+  border-color: var(--color-blue); }
+  .psychologists-item__name {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 500; }
+  .psychologists-item__job {
+    font-weight: 500; }
+  .psychologists-item__fact {
+    display: flex;
+    align-items: center;
+    font-weight: 500; }
+  .psychologists-item__exp-length {
+    white-space: nowrap; }
 
 /*!************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./node_modules/tiny-date-picker/tiny-date-picker.css ***!

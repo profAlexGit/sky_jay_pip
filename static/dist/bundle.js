@@ -563,6 +563,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./css/scss/psychologists-list.scss":
+/*!******************************************!*\
+  !*** ./css/scss/psychologists-list.scss ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./css/scss/tooltip.scss":
 /*!*******************************!*\
   !*** ./css/scss/tooltip.scss ***!
@@ -1925,14 +1938,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_scss_video_list_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./css/scss/video-list.scss */ "./css/scss/video-list.scss");
 /* harmony import */ var _css_scss_video_player_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./css/scss/video-player.scss */ "./css/scss/video-player.scss");
 /* harmony import */ var _css_scss_note_list_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./css/scss/note-list.scss */ "./css/scss/note-list.scss");
-/* harmony import */ var _node_modules_tiny_date_picker_tiny_date_picker_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/tiny-date-picker/tiny-date-picker.css */ "./node_modules/tiny-date-picker/tiny-date-picker.css");
-/* harmony import */ var _css_scss_date_picker_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./css/scss/date-picker.scss */ "./css/scss/date-picker.scss");
-/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./js/script.js */ "./js/script.js");
-/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_js_script_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/video-player.js */ "./js/video-player.js");
-/* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_js_video_player_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _js_date_picker_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/date-picker.js */ "./js/date-picker.js");
-/* harmony import */ var _js_create_note_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/create-note.js */ "./js/create-note.js");
+/* harmony import */ var _css_scss_psychologists_list_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./css/scss/psychologists-list.scss */ "./css/scss/psychologists-list.scss");
+/* harmony import */ var _node_modules_tiny_date_picker_tiny_date_picker_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./node_modules/tiny-date-picker/tiny-date-picker.css */ "./node_modules/tiny-date-picker/tiny-date-picker.css");
+/* harmony import */ var _css_scss_date_picker_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./css/scss/date-picker.scss */ "./css/scss/date-picker.scss");
+/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/script.js */ "./js/script.js");
+/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_js_script_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/video-player.js */ "./js/video-player.js");
+/* harmony import */ var _js_video_player_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_js_video_player_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _js_date_picker_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/date-picker.js */ "./js/date-picker.js");
+/* harmony import */ var _js_create_note_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./js/create-note.js */ "./js/create-note.js");
+
 
 
 

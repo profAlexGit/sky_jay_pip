@@ -129,6 +129,10 @@ def diary_date():
 def create_note():
     return render_template('createnote.html')
 
+@app.route('/psychologists')
+def psychologists():
+    return render_template('psychologists.html')
+
 
 def main():
     db_session.global_init("db/sky_jay.db")

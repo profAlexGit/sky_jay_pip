@@ -9,6 +9,7 @@ import './css/scss/video-tags.scss';
 import './css/scss/video-list.scss';
 import './css/scss/video-player.scss';
 import './css/scss/note-list.scss';
+import './css/scss/psychologists-list.scss';
 
 import  './node_modules/tiny-date-picker/tiny-date-picker.css';
 import './css/scss/date-picker.scss';

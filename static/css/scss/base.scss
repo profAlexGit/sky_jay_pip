@@ -74,6 +74,7 @@ a:hover {
   margin: 0 auto;
   background: #DDDDDD;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .user-avatar img {
@@ -110,6 +111,10 @@ a:hover {
     }
     .mw-780 {
         max-width: 780px;
+    }
+
+    .text-muted {
+      color: #B9B9B9;
     }
 
     @media (max-width: 576px) {
