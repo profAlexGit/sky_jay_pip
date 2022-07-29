@@ -6,11 +6,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-3"></div>
-      <form class="col mx-auto mb-4">
+      <form class="col mx-auto mb-4", method="post">
         <div class="tab-content" id="note-mode-tabContent">
            <div class="tab-pane fade show active" id="note-mode-text" role="tabpanel" aria-labelledby="note-mode-text-tab">
-            <textarea id="note-textarea" class="form-control form-control-note mb-4" placeholder="Введите текст..."></textarea>
-           </div>
+            <!-- <textarea id="note-textarea" class="form-control form-control-note mb-4" placeholder="Введите текст...">{{ form.text.label }}</textarea> -->
+            {{ form.text(class='form-control form-control-note mb-4', placeholder="Введите текст...") }}
+          </div>
            <div class="tab-pane fade" id="note-mode-draw" role="tabpanel" aria-labelledby="note-mode-draw-tab">
              <div class="">
               <canvas id="note-canvas" class="form-control form-control-note p-0 mb-4"></canvas>
@@ -18,7 +19,10 @@
            </div>
         </div>
         <div class="d-flex gap-5 justify-content-center align-items-center">
-          <button type="submit" class="btn btn-blue">Сохранить</button>
+          <!-- <button type="submit" class="btn btn-blue">Сохранить</button> -->
+          
+            {{ form.submit(type='submit', class="btn btn-blue") }}
+          </form>
           <a href="/diary" class="btn btn-link">Вернуться назад</a>
         </div>
       </form>

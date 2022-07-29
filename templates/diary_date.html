@@ -26,6 +26,10 @@
             {{ form.text.label }}<br>
             {{ form.text(class="form-control") }}<br>
           </p>
+          <p>
+            {{ form.picture.label }}<br>
+            {{ form.picture(type='file', class='form-control-file') }}
+          </p>
           <p class="d-flex justify-content-between align-items-center mt-2">
             {{ form.submit(type="submit", class="btn btn-blue") }}
             <a href="/diary" class="btn btn-link">Вернуться назад</a>

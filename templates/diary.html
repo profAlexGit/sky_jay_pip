@@ -7,7 +7,7 @@
 <!--      если есть записи-->
       <h5 class="text-center mb-4 color-green">Мои записи</h5>
       <div class="note-list row row-cols-1 row-cols-md-3 row-cols-lg-5 align-items-stretch">
-        <div class="col mb-4">
+        <!-- <div class="col mb-4">
           <div class="note-item card">
             <div class="card-body">
               <div class="note-item__text" style="font-family: ; font-weight: ; text-align: ; color: ; ">
@@ -134,10 +134,27 @@
             </div>
           </div>
         </div>
+      </div> -->
+      {% if flag %}
+        {% for rec in record %}
+          <div class="col mb-4">
+            <div class="note-item card">
+              <div class="card-body">
+                <div class="note-item__text" style="font-family: ; text-align: ; color: ; ">
+                  {{ rec.content }}
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-between">
+                <span class="note-item__date">{{ rec.date_time }}</span>
+                <a href="/diary/date/{{ rec.user_id }}/{{ rec.id }}" class="btn btn-link">Открыть</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
       </div>
-<!---->
-      <a href="/diary/date" class="btn btn-green btn-round">Создать запись +</a>
     </section>
   </div>
+  <a href="/diary/date" class="btn btn-green btn-round">Создать запись +</a>
 </section>
 {% endblock %}

@@ -12,6 +12,7 @@ from data.models import Notes
 from forms.login_form import LoginForm
 from forms.register_form import RegisterForm
 from forms.diary_form import DiaryForm
+from forms.edit_record_form import EditRecord
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sky_jay_secret_key'
@@ -105,14 +106,25 @@ def psycho_cabinet():
 
 @app.route('/diary')
 def diary():
-    return render_template('diary.html')
+    record = []
+    flag = False
+    if current_user.is_authenticated:
+        flag = True
+        db_sess = db_session.create_session()
+        record = db_sess.query(Notes).filter(
+            Notes.user_id == current_user.id).all()
+    return render_template('diary.html', flag=flag, record=record)
 
 
 @app.route('/diary/date', methods=['Get', 'POST'])
 def diary_date():
     form = DiaryForm()
-    if form.validate_on_submit():
+    if request.method == 'POST':
+        pic = request.form.get('file')
+        print(pic)
+        # f.save(secure_filename(f.filename))
         db_sess = db_session.create_session()
+        print(form.date.data)
         notes = Notes(
             user_id=current_user.id,
             date_time=form.date.data,
@@ -121,13 +133,23 @@ def diary_date():
         db_sess.add(notes)
         db_sess.commit()
         return redirect('/diary')
-        # if current_user.is_authenticated:
-    return render_template('diary_date.html', form=form)
+    if current_user.is_authenticated:
+        return render_template('diary_date.html', form=form)
+    return redirect('/diary')
 
 
-@app.route('/diary/date/createnote')
-def create_note():
-    return render_template('createnote.html')
+@app.route('/diary/date/<user_id>/<id>', methods=['Get', 'POST'])
+def create_note(user_id, id):
+    edit = EditRecord()
+    db_sess = db_session.create_session()
+    record = db_sess.query(Notes).filter(
+        Notes.user_id == user_id, Notes.id == id).first()
+    if request.method == 'POST':
+        record.content = edit.text.data
+        db_sess.commit()
+        return redirect('/diary')
+    edit.text.data = record.content
+    return render_template('createnote.html', record=record, form=edit)
 
 @app.route('/psychologists')
 def psychologists():

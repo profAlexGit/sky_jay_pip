@@ -85,14 +85,27 @@ class Videos(SqlAlchemyBase):
 
 class Notes(SqlAlchemyBase):
     __tablename__ = "notes"
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
-    user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
-    date_time = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.now)
+
+    id = sqlalchemy.Column(
+        sqlalchemy.Integer, primary_key=True, autoincrement=True)
+    user_id = sqlalchemy.Column(
+        sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
+    date_time = sqlalchemy.Column(sqlalchemy.String)
     content = sqlalchemy.Column(sqlalchemy.Text(3000), nullable=False)
     font_size = sqlalchemy.Column(sqlalchemy.Integer, default=14)
     picture = sqlalchemy.Column(sqlalchemy.String)
     font_type = sqlalchemy.Column(sqlalchemy.Integer)
     user = orm.relation("User")
+
+    def __repr__(self):
+        return '<Notes(id=%s, user_id="%s", date_time="%s", content="%s", font_size="%s", picture="%s", font_type="%s")>' % \
+               (self.id,
+                self.user_id,
+                self.date_time,
+                self.content,
+                self.font_size,
+                self.picture,
+                self.font_type)
 
 
 class Orders(SqlAlchemyBase):
